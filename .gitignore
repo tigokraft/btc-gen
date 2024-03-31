@@ -23,6 +23,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+.vscode
 
 # Exes
 *.exe
