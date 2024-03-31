@@ -2,6 +2,6 @@
 #include <string.h>
 #include "headers.h"
 
-int generation(int random) {
-    ;
+int generation() {
+    
 }

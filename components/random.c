@@ -23,9 +23,3 @@ unsigned int getRandom(int value) {
     CryptReleaseContext(hProv, 0);
     return random_number % value + 1;
 }
-
-float getRandomFloat(float min, float max) {
-    unsigned int seed = time(NULL) ^ GetTickCount() ^ GetCurrentProcessId();
-    srand(seed);
-    return min + ((float)rand() / (float)RAND_MAX) * (max - min);
-}
