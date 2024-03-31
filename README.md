@@ -1,5 +1,5 @@
 #  BTC WALLET GENERATOR IN C
-## this generator is completly random and does not work
+## this generator is completly random and does not serve a purpose
   ❌ DO NOT TRY TO SELL THIS GENERATOR, IF YOU DO THAT YOU ARE JUST DUMB
 
 # HOW TO RUN 🚀
