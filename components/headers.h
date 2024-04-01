@@ -5,10 +5,13 @@ unsigned int getRandom(int value);
 
 // gen.c
 int generation();
-void genAll();
 
 // methods.c
-char taproot();
+char* allMethods();
+char* taproot();
+char* segWit();
+char* scriptAdd();
+char* legacy();
 
 // screen width
 int getConsoleWidth();

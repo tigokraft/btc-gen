@@ -21,5 +21,5 @@ unsigned int getRandom(int value) {
     }
 
     CryptReleaseContext(hProv, 0);
-    return random_number % value + 1;
+    return random_number % value;
 }
