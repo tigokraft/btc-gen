@@ -3,6 +3,7 @@
 #include <windows.h>
 #include <conio.h>
 #include <stdbool.h>
+#include <time.h>
 
 #include "headers.h"
 #include "methods.c"
@@ -14,10 +15,22 @@ void generation(int value) {
     int keyPressed = 0;
     bool valid = true;
 
-    system("cls");
-    name();
+    time_t currentTime;
+    struct tm *timeInfo;
+    char formattedTime[20]; 
+    FILE *fp;
 
-    fptr = fopen("hits.txt", "a+");
+    time(&currentTime);
+    timeInfo = localtime(&currentTime);
+    strftime(formattedTime, sizeof(formattedTime), "%Y-%m-%d-%M-%S", timeInfo);
+
+    // Construct the filename with ".txt" extension
+    char filename[30]; // Make sure it's large enough to hold the name and extension
+    strcpy(filename, formattedTime); 
+    strcat(filename, ".txt"); 
+    
+    fptr = fopen(filename, "w"); 
+    
 
     if (fptr == NULL) {
         printf("The file is not opened. The program will "
@@ -25,6 +38,8 @@ void generation(int value) {
         exit(0);
     }
  
+    system("cls");
+    name();
 
     do
     {
@@ -45,7 +60,7 @@ void generation(int value) {
         }
 
         printf("generated: %s\n", address);
-        fprintf("generated: %s | method: %d", address, value);
+        fprintf(fptr, "generated: %s | method: %d\n", address, value);
         free(address);  
 
         if (kbhit()) {  // Check if a key has been pressed

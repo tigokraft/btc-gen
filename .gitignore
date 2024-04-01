@@ -24,6 +24,7 @@ $RECYCLE.BIN/
 *.lnk
 
 .vscode
+.txt
 
 # Exes
 *.exe
