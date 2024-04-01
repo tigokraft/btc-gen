@@ -7,10 +7,24 @@
 #include "headers.h"
 #include "methods.c"
 
-int generation(int value) {
+FILE* fptr;
+
+void generation(int value) {
     char* address;
     int keyPressed = 0;
     bool valid = true;
+
+    system("cls");
+    name();
+
+    fptr = fopen("hits.txt", "a+");
+
+    if (fptr == NULL) {
+        printf("The file is not opened. The program will "
+               "now exit.");
+        exit(0);
+    }
+ 
 
     do
     {
@@ -31,6 +45,7 @@ int generation(int value) {
         }
 
         printf("generated: %s\n", address);
+        fprintf("generated: %s | method: %d", address, value);
         free(address);  
 
         if (kbhit()) {  // Check if a key has been pressed
@@ -38,4 +53,6 @@ int generation(int value) {
             valid = false;
         } 
     } while (valid);
+
+    fclose(fptr);
 }

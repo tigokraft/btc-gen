@@ -4,7 +4,7 @@
 unsigned int getRandom(int value);
 
 // gen.c
-int generation();
+void generation();
 
 // methods.c
 char* allMethods();

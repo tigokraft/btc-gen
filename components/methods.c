@@ -7,6 +7,9 @@ char* allMethods() {
     char *result = NULL; // Initialize to NULL
 
     switch (value) {
+    case 0:
+        result = taproot(); // No need for malloc, taproot allocates memory 
+        break;
     case 1:
         result = taproot(); // No need for malloc, taproot allocates memory 
         break;
