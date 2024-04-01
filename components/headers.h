@@ -5,6 +5,10 @@ unsigned int getRandom(int value);
 
 // gen.c
 int generation();
+void genAll();
+
+// methods.c
+char taproot();
 
 // screen width
 int getConsoleWidth();
